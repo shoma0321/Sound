@@ -14,6 +14,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let url = URL(fileURLWithPath:
+                        Bundle.main.bundlePath).appendingPathComponent("sample.mp3")
+    }
+    
 }
 
