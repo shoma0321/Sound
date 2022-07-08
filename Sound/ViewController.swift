@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    var player: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,13 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         let url = URL(fileURLWithPath:
                         Bundle.main.bundlePath).appendingPathComponent("sample.mp3")
+        
+        do{
+            player = try AVAudioPlayer(contentsOf: url)
+            player.play()
+        }catch {
+            print("Faied!")
+        }
     }
     
 }
